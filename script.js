@@ -187,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `https://www.genspark.ai/search?query=${query}`;
             case 'felo':
                 return `https://felo.ai/search/Qw_X6R5gI8UFuHclWzGbT?q=${query}`;
+            case 'wolframalpha':
+                return `https://www.wolframalpha.com/input?i=${query}&lang=ja`;
         }
     }
 

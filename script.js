@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'academic':
                 searchUrl = getAcademicServiceUrl(selectedService, query);
+             case 'travel':
+                searchUrl = gettravelServiceUrl(selectedService, query);
                 break;
             case 'ai':
                 searchUrl = getAiServiceUrl(selectedService, query);
@@ -176,6 +178,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `https://scholar.google.com/scholar?q=${query}`;
         }
     }
+
+    function gettravelServiceUrl(service, query) {    //翻訳検索
+        switch (service) {
+            case 'google-Translation?-JA':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&text=${query}&op=translate`;
+            case 'google-Translation?-EN':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=en&text=${query}&op=translate`;
+            case 'google-Translation?-DE':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=de&text=${query}&op=translate`;
+            case 'google-Translation?-FR':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=fr&text=${query}&op=translate`;
+
+            case 'google-Translation?-KR':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ko&text=${query}&op=translate`;
+            case 'google-Translation?-zh-CN':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-CN&text=${query}&op=translate`;
+            case 'google-Translation?-zh-TW':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-TW&text=${query}&op=translate`;
+        }
+    }
+
 
     function getAiServiceUrl(service, query) {  //AI
         switch (service) {

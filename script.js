@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'academic':
                 searchUrl = getAcademicServiceUrl(selectedService, query);
+                break;
              case 'travel':
                 searchUrl = gettravelServiceUrl(selectedService, query);
                 break;
@@ -181,20 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function gettravelServiceUrl(service, query) {    //翻訳検索
         switch (service) {
-            case 'google-Translation?-JA':
-                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&text=${query}&op=translate`;
-            case 'google-Translation?-EN':
-                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=en&text=${query}&op=translate`;
-            case 'google-Translation?-DE':
+            case 'google-Translation?-JA': //日本
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&text=${query}&op=translate`;　
+            case 'google-Translation?-EN': //米英
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=en&text=${query}&op=translate`;　
+            case 'google-Translation?-DE': //ドイツ
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=de&text=${query}&op=translate`;
-            case 'google-Translation?-FR':
+            case 'google-Translation?-FR':　//フランス
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=fr&text=${query}&op=translate`;
-
-            case 'google-Translation?-KR':
+            case 'google-Translation?-IT':　//イタリア
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=it&text=${query}&op=translate`;
+            case 'google-Translation?-KR': //韓国
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ko&text=${query}&op=translate`;
-            case 'google-Translation?-zh-CN':
+            case 'google-Translation?-zh-CN':　//簡体中国語
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-CN&text=${query}&op=translate`;
-            case 'google-Translation?-zh-TW':
+            case 'google-Translation?-zh-TW':  //繁体中国語 
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-TW&text=${query}&op=translate`;
         }
     }

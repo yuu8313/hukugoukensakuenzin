@@ -177,6 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
         switch (service) {
             case 'google-scholar':
                 return `https://scholar.google.com/scholar?q=${query}`;
+            case 'CiNii Articles':
+                return `https://cir.nii.ac.jp/all?q=${query}`;
         }
     }
 

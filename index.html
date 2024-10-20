@@ -12,6 +12,7 @@
         <h1>8313複合検索エンジン</h1>
         <div class="search-tabs">
             <button class="tab-button active" data-tab="search-engines">検索エンジン</button>
+            <button class="tab-button" data-tab="image">画像</button>
             <button class="tab-button" data-tab="music">音楽</button>
             <button class="tab-button" data-tab="shopping">ショッピング</button>
             <button class="tab-button" data-tab="sns">SNS</button>
@@ -92,6 +93,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="tab-content" id="image">
+                <select id="image-service-select">
+                    <option value="googleimage">Google画像検索</option>
+                    <option value="bingimage">Bing画像検索</option>
+                    <option value="yahooimage">Yahoo!Japan画像検索</option>
+                    <option value="duckduckgoimage">duckduckgo画像検索</option>
+                    <option value="braveimage">Brave Search画像検索</option>
+                    <option value="exciteimag">Excite画像検索</option>
+                </select>
+
             <div class="tab-content" id="music">
                 <select id="music-service-select">
                     <option value="spotify">Spotify</option>
@@ -119,12 +131,15 @@
                     <option value="linkedin">LinkedIn</option>
                 </select>
             </div>
+
+            </div>
             <div class="tab-content" id="video">
                 <select id="video-service-select">
                     <option value="niconico">ニコニコ動画</option>
                     <option value="youtube">YouTube</option>
                     <option value="dailymotion">Dailymotion</option>
                     <option value="bilibili">bilibili（中国のニコニコのような動画サイト）</option>
+                    <option value="tiktok">Tiktok</option>
                 </select>
             </div>
             <div class="tab-content" id="discussion">
@@ -147,9 +162,7 @@
             <div class="tab-content" id="academic">
                 <select id="academic-service-select">
                     <option value="google-scholar">Google Scholar</option>
-                    <option value="CiNii Articles">CiNii Articles</option>
                 </select>
-
             </div>
             <div class="tab-content" id="travel">
                 <select id="travel-service-select">
@@ -157,17 +170,19 @@
                     <option value="google-Translation?-EN">Google 翻訳(言語を検出→英)</option>
                     <option value="google-Translation?-DE">Google 翻訳(言語を検出→独)</option>
                     <option value="google-Translation?-FR">Google 翻訳(言語を検出→仏)</option>
-                    <option value="google-Translation?-IT">Google 翻訳(言語を検出→伊)</option>
+
                     <option value="google-Translation?-KR">Google 翻訳(言語を検出→韓)</option>
                     <option value="google-Translation?-zh-CN">Google 翻訳(言語を検出→中簡体)</option>
                     <option value="google-Translation?-zh-TW">Google 翻訳(言語を検出→中TW)</option>
                 </select>
             </div>
+
+
             <div class="tab-content" id="ai">
                 <select id="ai-service-select">
                     <option value="chatgpt">ChatGPT</option>
                     <option value="perplexity">Perplexity</option>
-                    <option value="genspark">Genspark（Perplexityより詳しく調べる）</option>
+                    <option value="genspark">Genspark（Perplexityよりい詳しく調べる）</option>
                     <option value="felo">Felo（日本版Perplexity）</option>
                     <option value="wolframalpha">wolframalpha(計算AI)</option>
                 </select>

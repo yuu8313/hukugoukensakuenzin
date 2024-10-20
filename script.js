@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'sns':
                 searchUrl = getSnsServiceUrl(selectedService, query);
                 break;
+            case 'image':
+                searchUrl = getImageServiceUrl(selectedService, query);
+                break;
             case 'video':
                 searchUrl = getVideoServiceUrl(selectedService, query);
                 break;
@@ -53,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'academic':
                 searchUrl = getAcademicServiceUrl(selectedService, query);
-                break;
              case 'travel':
                 searchUrl = gettravelServiceUrl(selectedService, query);
                 break;
@@ -132,6 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getImageServiceUrl(service, query) { //画像検索
+        switch (service) {
+            case 'googleimage':
+                return `https://www.google.com/search?q=${query}&tbm=isch`;
+            case 'bingimage':
+                return `https://www.bing.com/images/search?q=${query}/`;
+            case 'yahooimage':
+                return `https://search.yahoo.co.jp/image/search?p=${query}`;
+            case 'duckduckgoimage':
+                return `https://duckduckgo.com/?q=${query}&iax=images&ia=images`;
+            case 'braveimage':
+                return `https://search.brave.com/images?q=${query}`;
+            case 'exciteimage':
+                return `https://imagesearch.excite.co.jp/?q=${query}`;
+        }
+    }
+
     function getVideoServiceUrl(service, query) {   //動画サイト検索
         switch (service) {
             case 'niconico':
@@ -142,6 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return `https://www.dailymotion.com/search/${query}`;
             case 'bilibili':
                 return `https://search.bilibili.com/all?keyword=${query}`;
+            case 'tiktok':
+                return `https://www.tiktok.com/search?q=${query}`;
         }
     }
 
@@ -177,28 +198,25 @@ document.addEventListener('DOMContentLoaded', () => {
         switch (service) {
             case 'google-scholar':
                 return `https://scholar.google.com/scholar?q=${query}`;
-            case 'CiNii Articles':
-                return `https://cir.nii.ac.jp/all?q=${query}`;
         }
     }
 
     function gettravelServiceUrl(service, query) {    //翻訳検索
         switch (service) {
-            case 'google-Translation?-JA': //日本
-                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&text=${query}&op=translate`;　
-            case 'google-Translation?-EN': //米英
-                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=en&text=${query}&op=translate`;　
-            case 'google-Translation?-DE': //ドイツ
+            case 'google-Translation?-JA':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&text=${query}&op=translate`;
+            case 'google-Translation?-EN':
+                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=en&text=${query}&op=translate`;
+            case 'google-Translation?-DE':
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=de&text=${query}&op=translate`;
-            case 'google-Translation?-FR':　//フランス
+            case 'google-Translation?-FR':
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=fr&text=${query}&op=translate`;
-            case 'google-Translation?-IT':　//イタリア
-                return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=it&text=${query}&op=translate`;
-            case 'google-Translation?-KR': //韓国
+
+            case 'google-Translation?-KR':
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=ko&text=${query}&op=translate`;
-            case 'google-Translation?-zh-CN':　//簡体中国語
+            case 'google-Translation?-zh-CN':
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-CN&text=${query}&op=translate`;
-            case 'google-Translation?-zh-TW':  //繁体中国語 
+            case 'google-Translation?-zh-TW':
                 return `https://translate.google.co.jp/?hl=ja&sl=auto&tl=zh-TW&text=${query}&op=translate`;
         }
     }
